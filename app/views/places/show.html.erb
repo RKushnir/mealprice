@@ -1,0 +1,34 @@
+<%- model_class = Place -%>
+<div class="page-header">
+  <h1><%= @place.title %></h1>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              [:edit, @place], :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              @place,
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm")) },
+              :class => 'btn btn-danger' %>
+</div>
+
+<dl>
+  <%- @place.menu_items.each do |menu_item| -%>
+    <dt>
+      <%= menu_item.title %>
+    </dt>
+    <dd>
+      <%= number_to_currency(menu_item.price) %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  [:edit, menu_item], :class => 'btn btn-mini' %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  menu_item,
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm")) },
+                  :class => 'btn btn-danger btn-mini' %>
+    </dd>
+  <%- end -%>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")), :places, :class => 'btn' %>
+  <%= link_to t('.add_menu_item', :default => t("helpers.links.new")), [:new, @place, :menu_item], :class => 'btn btn-primary' %>
+</div>
