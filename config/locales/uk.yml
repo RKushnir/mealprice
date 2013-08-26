@@ -60,12 +60,16 @@ uk:
   places:
     index:
       new: Додати новий
-      title: Заклади харчування
+      title: Заклади
     show:
       back: До списку закладів
       add_menu_item: Додати позицію меню
     edit:
       title: Змінити назву
+    new:
+      title: Новий заклад
   menu_items:
     edit:
       title: Редагувати позицію
+    new:
+      title: Нова позиція меню
