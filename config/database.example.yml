@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: mealprice_development
+  pool: 5
+  username: mealprice
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: mealprice_test
+  pool: 5
+  username: mealprice
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: mealprice_production
+  pool: 5
+  username: mealprice
+  password:
